@@ -11,10 +11,10 @@ def lcs(x, y):
         l[i][j] = 1 + l[i - 1][j - 1]
         max_l = max(l[i][j], max_l)
       else:
-        # Otherwise take the max of the left or top neighbor.
+        # Otherwise set the index to 0.
         l[i][j] = 0
 
-  # Return the last element in the matrix.
+  # Return the max length in the matrix.
   return max_l, l
 
 def reconstruct_seq(x, y, l, max_l):
